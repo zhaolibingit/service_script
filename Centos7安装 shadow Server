@@ -1,0 +1,19 @@
+#1.安装pip
+yum install python-pip -y
+pip install shadowsocks
+
+vi /etc/shadowsocks.json
+
+#机器内网IP 10.70.63.159
+{
+    "server":"10.70.63.159",
+    "server_port":1080,
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "password":"XXX",
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open": false
+}
+
+/usr/bin/ssserver -c /etc/shadowsocks.json -d restart
